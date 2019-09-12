@@ -153,8 +153,8 @@ button {
     color: white;
     height: 3rem;
     padding: 10px;
+    /* max-width: 100%; */
     min-width: 50%;
-    max-width: 200px;
     border-top: 5px solid rgba(255, 255, 255, 0.3);
     border-left: 5px solid rgba(0,0,0,.5);
     border-right: 5px solid rgba(0,0,0,.5);
@@ -163,6 +163,10 @@ button {
 
 .blackbox {
     background-color: blue;
+}
+
+.no-digital {
+    min-width: 100%;
 }
 
 .gumroad {
