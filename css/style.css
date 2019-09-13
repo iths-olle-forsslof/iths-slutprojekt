@@ -231,3 +231,19 @@ button:active {
     border-right: 3px solid rgba(0,0,0,.5);
     border-bottom: 3px solid rgba(255, 255, 255, 0.5);
 }
+
+@media only screen and (min-device-width: 1224px) {
+
+.desktop {
+    display: inline;
+}
+
+#browse {
+    display: none;
+}
+
+.menu li {
+    padding: 3rem;
+}
+
+}
