@@ -17,20 +17,28 @@
     <header class="top-header">
         <h1>Peow</h1>
     </header>
-
-    <nav>
-        <li>
-            <ul>BROWSE BOOK SHOP</ul>
-            <ul class="desktop">BOOK SHOP</ul>
-            <ul class="desktop">DIGITAL BOOK SHOP</ul>
-            <ul class="desktop">ABOUT</ul>
-            <ul class="desktop">STOCKISTS</ul>
-        </li>
+    
+    <nav class="menu">
+        <ul>
+            <li id="browse">BROWSE BOOKS</li>
+            <li class="desktop">BOOK SHOP</li>
+            <li class="desktop">DIGITAL BOOK SHOP</li>
+            <li class="desktop">ABOUT</li>
+            <li class="desktop">STOCKISTS</li>
+        </ul>
+        <nav class="book-menu">
+            <ul>
+                <li><a href="#daod">DARK ANGELS of DARKNESS</a></li>
+                <li><a href="#funky">FUNKY TOWN</a></li>
+                <li><a href="#heat">HEAT</a></li>
+            </ul>
+        </nav>
     </nav>
-
+        
+        
     <section class="shop-container">
         
-        <article class="book-container">
+        <article class="book-container" id="daod">
 
             <header class="title">
                 <h1>DARK ANGELS of DARKNESS</h1>
@@ -57,7 +65,7 @@
 
         </article>
  
-        <article class="book-container">
+        <article class="book-container" id="funky">
 
             <header class="title">
                 <h1>FUNKY TOWN</h1>
@@ -84,7 +92,7 @@
 
         </article>
         
-        <article class="book-container">
+        <article class="book-container" id="heat">
 
             <header class="title">
                 <h1>HEAT</h1>
@@ -117,6 +125,8 @@
     <footer></footer>
 
 </div>
+
+<script src="js/main.js"></script>
 
 </body>
 
