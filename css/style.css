@@ -17,7 +17,7 @@ body {
     flex-direction: row;
 }
 
-.top-header, .book-menu, .book-menu ul, .book-container, .title, .book-images, .copy-text {
+.top-header, .top-right, .book-menu, .book-menu ul, .book-container, .title, .book-images, .copy-text {
     display: flex;
     flex-direction: column;
 }
@@ -27,7 +27,7 @@ a:link, a:visited, a:hover, a:active  {
     color:black;
 }
 
-/* --------------------HEADER AND MENUE SETTINGS------------------------ */
+/* --------------------HEADER, MENUE & FOOTER SETTINGS------------------------ */
 
 .top-header {
     position: relative;
@@ -123,6 +123,27 @@ ul, li {
 
 .desktop, .top-center, .top-right{   /*header & menu items that are only visible on desktop */
     display: none;
+}
+
+.bottom-footer {
+    position: relative;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    background-color: rgb(0, 0, 0);
+    min-width: 100vw;
+    border-top: 1px solid black;
+    color:white;
+}
+
+.bottom-footer h1 {
+    font-family: 'Nova Round', cursive;
+    font-size: 4rem;
+    font-weight: 100;
+    text-align: left;
+    padding: 0px;
+    margin: 20px 30px;
 }
 
 /* ----------------- SHOP & BOOKS SETTINGS --------------- */
@@ -231,8 +252,12 @@ button:hover {
 
 @media only screen and (min-device-width: 1224px) {
 
+.book-menu{
+    display: none;
+}
+
 .desktop {
-    display: inline;
+    display: block;
 }
 
 p {
@@ -259,6 +284,26 @@ p {
     padding: 0px 30px;
 }
 
+.top-right {
+    justify-content: space-around;
+    align-items: flex-start
+}
+
+.top-right input {
+    padding: .5rem;
+}
+
+.top-right #signup-btn {
+    font-family: 'Nova Round', cursive;
+    font-weight: bold;
+    color: black;
+    /* height: 3rem; */
+    padding: .5rem;
+    min-width: 50%;
+    background-color: white;
+    border: 1px solid black;
+}
+
 .top-header p:last-of-type {
     padding: 0px;
     margin: 0px;
@@ -269,17 +314,28 @@ p {
 }
 
 .menu li {
-    margin: 2rem;
+    padding: 1rem 2rem;
 }
 
 .menu > ul {
+    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     width: 100vw;
-    height: 100%;
     background-color: white;
-    padding: 10px 0;
+    margin: 0px;
+    padding: 0;
+}
+
+.desktop:hover {
+    position:relative;
+    z-index: 5;
+    /* background-color:rgb(255, 230, 0); */
+    transform: scale(1.1);
+    /* border: 1px solid black; */
+    transform: rotateZ(5deg);
+    color: rgb(180, 92, 103);
 }
 
 /* -----------------SHOP SECTION-------------------- */
@@ -319,17 +375,28 @@ p {
     position: relative;
     padding: 15px 0;
     background-color: transparent;
-    animation: bookwiggle 3s infinite;
+    animation: bookwiggle 10s infinite;
     animation-delay: -4s;
     animation-timing-function: ease-in-out;
     perspective: 900px;
+    /* top:0px; */
     border: none;
 }
 
 @keyframes bookwiggle {
 
+    0% {perspective: 900px;}
+    10% {perspective: 700px;}
+    20% {perspective: 900px;}
+    30% {perspective: 700px;}
+    40% {perspective: 900px;}
     50% {perspective: 700px;}
-
+    60% {perspective: 900px;}
+    70% {perspective: 700px;}
+    80% {perspective: 900px;}
+    90% {perspective: 700px;}
+    100% {perspective: 900px;}
+    
 }
 
 .book-images > img {
@@ -338,9 +405,9 @@ p {
         box-shadow .3s ease, 
         translate .3s ease, 
         border-width .3s ease;
-    transform: rotateX(30deg) rotateY(-7deg);
+    transform: rotateX(30deg) rotateZ(-7deg);
     box-shadow: 0px 20px 2px -10px rgba(66, 107, 117, 0.5);
-    border-bottom: 5px rgb(199, 199, 180) solid;
+    border-bottom: .5rem rgb(226, 226, 215) solid;
     border-bottom-left-radius: .3rem;
     border-bottom-right-radius: .2rem;
 }
@@ -384,7 +451,6 @@ p {
 .book-container:hover .book-details {
     background-color:rgb(255, 230, 0);
     transform: scale(1.04);
-    /* box-shadow: 0px 15px 2px -10px rgba(207, 18, 18, 0.5); */
     border-top: 1px solid black;
     border-bottom: .5px solid black;
 }
@@ -393,7 +459,6 @@ p {
     transform: scale(1.04) translateY(3px);
     margin: 3px;
     background-color:rgb(255, 230, 0);  
-
     box-shadow: 0px 6px 2px -10px rgba(207, 18, 18, 0.5);
     border-width: 1px;
     border-radius: .1rem;
@@ -418,6 +483,22 @@ p {
 .book-container:hover .no-digital:active {
     background-color: rgb(180, 92, 103);
     transform: translateY(1px);
+}
+
+/* -----------------ABOUT PAGE----------------- */
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+}
+
+.about-right, .about-left {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    max-width: 30%;
 }
 
 }
