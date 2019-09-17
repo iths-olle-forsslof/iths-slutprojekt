@@ -205,35 +205,31 @@ button {
     height: 3rem;
     padding: 10px;
     min-width: 50%;
-    background-color: rgb(255, 255, 255);
+    background-color: transparent;
     border: 1px solid black;
 }
 
 button:hover {
-    background-color: rgb(0, 0, 0);
-    color: white;
+    /* background-color: rgb(0, 0, 0); */
+    color: moccasin;
 }
 
 .no-digital {
     min-width: 100%;
 }
 
-button:active {
+/* button:active {
     font-size: .8rem;
     border-top: 3px solid rgba(0,0,0,.3);
     border-left: 3px solid rgba(0,0,0,.5);
     border-right: 3px solid rgba(0,0,0,.5);
     border-bottom: 3px solid rgba(0, 0, 0, 0.5);
-}
+} */
 
 /* -------------------------DESKTOP SETTINGS-------------------------- */
 
 
 @media only screen and (min-device-width: 1224px) {
-
-/* * {
-    background-color: white;
-} */
 
 .desktop {
     display: inline;
@@ -241,14 +237,6 @@ button:active {
 
 p {
     font-size: .8rem;
-}
-
-.shop-container h1 {
-    font-size: 1.3rem;
-}
-
-.shop-container h3 {
-    font-size: 1rem;
 }
 
 .top-header {
@@ -301,20 +289,60 @@ p {
 }
 
 .shop-container {
+    min-width: 100vw;
     align-items: flex-start;
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(236, 243, 174));
+    background-attachment: fixed;
+}
+
+.shop-container h1 {
+    font-size: 1.3rem;
+}
+
+.shop-container h3 {
+    font-size: 1rem;
 }
 
 .book-container {
     position: relative;
     max-width: 16em;
     margin: 30px;
-    transition: box-shadow .2s ease, transform .2s ease;
+    transition: box-shadow .2s ease, transform .2s ease, background-color .2s ease;
 }
-
 
 .book-container .copy-text {
     padding: 0rem .5rem;
     margin: 0;
+}
+
+.book-images {
+    position: relative;
+    padding: 15px 0;
+    background-color: transparent;
+    animation: bookwiggle 3s infinite;
+    animation-delay: -4s;
+    animation-timing-function: ease-in-out;
+    perspective: 900px;
+    border: none;
+}
+
+@keyframes bookwiggle {
+
+    50% {perspective: 700px;}
+
+}
+
+.book-images > img {
+    transition:
+        transform .3s ease, 
+        box-shadow .3s ease, 
+        translate .3s ease, 
+        border-width .3s ease;
+    transform: rotateX(30deg) rotateY(-7deg);
+    box-shadow: 0px 20px 2px -10px rgba(66, 107, 117, 0.5);
+    border-bottom: 5px rgb(199, 199, 180) solid;
+    border-bottom-left-radius: .3rem;
+    border-bottom-right-radius: .2rem;
 }
 
 .title {
@@ -325,11 +353,8 @@ p {
     justify-content: center;
     padding: 0px;
     text-align: center;
-    transition: background-color .1s ease-in-out, box-shadow .1s ease-in-out;
-}
-
-.book-images:hover {
-    background-image: linear-gradient(white 60%, yellow)
+    border: none;
+    transition: background-color .05s ease-in-out, box-shadow .1s ease-in-out, border .0.5  s ease-in-out;
 }
 
 .book-details > p {
@@ -338,17 +363,61 @@ p {
 }
 
 .book-container:hover {
-    box-shadow: 0px 15px 2px -5px rgba(134, 94, 1, 0.5);
+    box-shadow: 0px 20px 2px -10px rgba(66, 107, 117, 0.5);
     transform: scale(1.01);
-    /* background-color:yellow; */
+    /* background-image: linear-gradient(rgba(255, 255, 255, 0) 30%, rgba(255, 251, 0, .6)60%); */
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.397);
 }
 
+/* .book-container:hover .book-images {
+    background-image: linear-gradient(white 10%, rgb(255, 236, 126));
+} */
 
-.book-container:hover .book-details:hover {
-    background-color:red;
-    transform: scale(1.15);
-    color: white;
-    box-shadow: 0px 15px 2px -10px rgba(82, 3, 3, 0.5);
+.book-container:hover .book-images >img {
+    transform: scale(1.07) translateY(-20px);
+    box-shadow: 0px 17px 2px -10px rgba(69, 71, 97, 0.5);
+    border-width: 0px;
+    border-radius: .1rem;
+}
+
+.book-container:hover .book-details {
+    background-color:rgb(255, 230, 0);
+    transform: scale(1.04);
+    /* box-shadow: 0px 15px 2px -10px rgba(207, 18, 18, 0.5); */
+    border-top: 1px solid black;
+    border-bottom: .5px solid black;
+}
+
+.book-container:hover button {
+    transform: scale(1.04) translateY(3px);
+    margin: 3px;
+    background-color:rgb(255, 230, 0);  
+
+    box-shadow: 0px 6px 2px -10px rgba(207, 18, 18, 0.5);
+    border-width: 1px;
+    border-radius: .1rem;
+    
+}
+
+.book-container:hover button:hover {
+    background-color: rgba(243, 135, 149, 1 );
+    cursor: pointer;
+}
+
+.book-container:hover .blackbox:active {
+    background-color: rgb(180, 92, 103);
+    transform: translateY(1px) translateX(5px);
+}
+
+.book-container:hover .gumroad:active {
+    background-color: rgb(180, 92, 103);
+    transform: translateY(1px) translateX(-5px);
+}
+
+.book-container:hover .no-digital:active {
+    background-color: rgb(180, 92, 103);
+    transform: translateY(1px);
 }
 
 }
